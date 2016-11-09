@@ -23,7 +23,7 @@
         </md-tab>
       </md-tab-group>
     </md-sidenav>
-    <md-grid-list cols="4" rowHeight="200px">
+    <md-grid-list cols="4" rowHeight="1:1">
       <md-grid-tile class="recipe" *ngFor="let recipe of recipes" [rowspan]="recipe.rows">
         <img class="recipe__img" src="{{currentRecipe.image}}" alt="photo of {{recipe.title}}">
         <md-grid-tile-footer>
