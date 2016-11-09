@@ -10,11 +10,11 @@ export class AppComponent {
   title = 'app works!';
 
   recipes = [
-    {rows: 2, title: 'Havregrynscookies', image: '../recipes/Havregrynscookies.png'},
-    {rows: 2, title: 'Havregrynscookies', image: '../recipes/Havregrynscookies.png'},
-    {rows: 2, title: 'Havregrynscookies', image: '../recipes/Havregrynscookies.png'},
-    {rows: 2, title: 'Havregrynscookies', image: '../recipes/Havregrynscookies.png'},
-    {rows: 2, title: 'Havregrynscookies', image: '../recipes/Havregrynscookies.png'}
+    {rows: 2, title: 'Havregrynscookies', image: './recipes/Havregrynscookies.png'},
+    {rows: 2, title: 'Havregrynscookies', image: './recipes/Havregrynscookies.png'},
+    {rows: 2, title: 'Havregrynscookies', image: './recipes/Havregrynscookies.png'},
+    {rows: 2, title: 'Havregrynscookies', image: './recipes/Havregrynscookies.png'},
+    {rows: 2, title: 'Havregrynscookies', image: './recipes/Havregrynscookies.png'}
   ];
 
   currentRecipe = {};

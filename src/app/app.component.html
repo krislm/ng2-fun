@@ -9,23 +9,37 @@
         <md-tab>
           <template md-tab-label>Details</template>
           <template md-tab-content>
-            <p>Name: {{currentRecipe.title}}</p>
-            <img class="recipe-details__img" src="{{currentRecipe.image}}" />
-            <button md-raised-button (click)="closeRecipe()" color="accent">CLOSE</button>
+                <md-card>
+                   <md-card-subtitle>Fremgangsmåde</md-card-subtitle>
+                   <md-card-title>{{currentRecipe.title}}</md-card-title>
+                   <md-card-content>
+                        <p>{{currentRecipe.descripiton}}</p>
+                        <p>{{currentRecipe.descripiton}}</p>
+                   </md-card-content>
+                   <md-card-actions>
+                        <button md-button (click)="closeRecipe()">CLOSE</button>
+                   </md-card-actions>
+                </md-card>
           </template>
         </md-tab>
         <md-tab>
           <template md-tab-label>Ingredients</template>
           <template md-tab-content>
-              <md-checkbox>Havregryn</md-checkbox>
-              <button md-raised-button (click)="closeRecipe()" color="accent">CLOSE</button>
+              <md-list>
+                    <md-list-item>
+                        <md-checkbox>Havregryn</md-checkbox>
+                    </md-list-item>
+                    <md-list-item>
+                        <button md-button (click)="closeRecipe()">CLOSE</button>
+                    </md-list-item>
+              </md-list>
           </template>
         </md-tab>
       </md-tab-group>
     </md-sidenav>
-    <md-grid-list cols="4" rowHeight="1:1">
+    <md-grid-list cols="3" rowHeight="4:3">
       <md-grid-tile class="recipe" *ngFor="let recipe of recipes" [rowspan]="recipe.rows">
-        <img class="recipe__img" src="{{currentRecipe.image}}" alt="photo of {{recipe.title}}">
+        <img class="recipe__img" src="{{recipe.image}}" alt="photo of {{recipe.title}}">
         <md-grid-tile-footer>
           <h3 md-line>{{recipe.title}}</h3>
           <button md-icon-button (click)="showRecipe(recipe)">
