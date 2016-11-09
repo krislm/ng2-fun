@@ -1,3 +1,39 @@
-<h1>
-  {{title}}
-</h1>
+<div class="dark-theme recipes">
+  <md-toolbar color="primary">
+    My Recipes
+  </md-toolbar>
+
+  <md-sidenav-layout>
+    <md-sidenav align="end" mode="side" #sidenav>
+      <md-tab-group>
+        <md-tab>
+          <template md-tab-label>Details</template>
+          <template md-tab-content>
+            <p>Name: {{currentRecipe.title}}</p>
+            <img class="recipe-details__img" src="{{currentRecipe.image}}" />
+            <button md-raised-button (click)="closeRecipe()" color="accent">CLOSE</button>
+          </template>
+        </md-tab>
+        <md-tab>
+          <template md-tab-label>Ingredients</template>
+          <template md-tab-content>
+              <md-checkbox>Havregryn</md-checkbox>
+              <button md-raised-button (click)="closeRecipe()" color="accent">CLOSE</button>
+          </template>
+        </md-tab>
+      </md-tab-group>
+    </md-sidenav>
+    <md-grid-list cols="4" rowHeight="200px">
+      <md-grid-tile class="recipe" *ngFor="let recipe of recipes" [rowspan]="recipe.rows">
+        <img class="recipe__img" src="{{currentRecipe.image}}" alt="photo of {{recipe.title}}">
+        <md-grid-tile-footer>
+          <h3 md-line>{{recipe.title}}</h3>
+          <button md-icon-button (click)="showRecipe(recipe)">
+            <md-icon>more</md-icon>
+          </button>
+        </md-grid-tile-footer>
+      </md-grid-tile>
+    </md-grid-list>
+  </md-sidenav-layout>
+
+</div>
